@@ -1,0 +1,132 @@
+{% extends "base.html" %} {% block title %}Webmap | Capital Greenspaces Project - Group 6{% endblock %}
+{% block content %}
+<!doctype html>
+
+<html lang="en-GB">
+
+  <head>
+    <meta charset="UTF-8">
+
+    
+    
+    <title>Webmap</title>
+    <!-- Import stylesheets -->
+    <link rel="stylesheet" href="static/webpage_style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="static/lightbox.css" rel="stylesheet" />
+    
+   
+    <style>
+      .about-section {
+  padding:18px 80px 700px 60px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)), url("static/database.jpg");
+  background-position: bottom center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+/* Center Image */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+      </style>
+    
+    
+  </head>
+
+  <body>
+    
+    <!-- Creation of interactive header-->
+    <div class="header">
+      <nav>
+        <a href="{{ url_for('views.home') }}">Home</a>
+        <a class="active" href="{{ url_for('webmap.web_map') }}">Interactive Webmap</a>
+        <a href="{{ url_for('query.index') }}">Query and Download</a>
+        <a href="{{ url_for('team.aboutus') }}">About Us</a>
+	<a class="active" href="static/userguide.jpg" data-lightbox="popup">User Guide</a>
+      </nav>
+    </div>
+
+    <!-- Creation of About-Section Banner Image and Title -->
+     <section id="webmap" align="center" >
+      <div class="about-section">
+      <div class="Titletxt">
+        <br><br><br><br><br><br><br><br><br><br>
+        <h1><center>Interactive Webmap</center></h1>
+      </div>
+      </div>
+    <!-- Captions over images -->
+      <figure class="textover">
+      <figcaption>Photo by <a href="https://unsplash.com/photos/oH8G8cn52o8" alt="Photographer of image" target="_blank">Dominik Rešek</a> on Unsplash</figcaption>
+      </figure>
+
+      <hr>
+
+      <!--DESCRIPTION-->
+      <section  align="center" style="background: #E9F5E9">
+	
+	  
+
+	    <!-- section title -->
+	    <div class="text-center" style="background: #E9F5E9">
+	      <br>
+	      <center><font size="+1" color="#19422A"><p>INTERACTIVE WEBMAP</p></font>
+	      <font size="+3" color="#448D38"><b>What do the map layers show?</b></font>
+	      <hr>
+	      <p>
+		  <ul>
+		    The <b><em>ARQI - Edinburgh</em></b> layer displays our index in each Datazone in Edinburgh. You can hover over the datazones to find out their score.
+		  </ul>
+		  <ul>
+		    The <b><em>Greenspaces - Edinburgh</em></b> layer displays the greenspaces included in our study. You can hover over the greenspaces to find out their score.
+		  </ul>
+		  <ul>
+		    The <b><em>SIMD</em></b> layer displays the Scottish Index of Multiple Deprivation. You can hover over the datazones to find out their score.
+		  </ul>
+		  <ul>
+		    The <b><em>Greenspace Access Points</em></b> layer shows the access points of each greenspace.
+		  </ul>
+		  <ul>
+		    The <b><em>Heatmap</em></b> layer shows where the greenspace access points are clustered in Edinburgh.
+		  </ul>
+		  <br>
+		  <font size="+1">With the measure tool you can measure distances and areas such as the distance between a location and a greenspace access point or the area of a greenspace.<br>For visual help, please use the <em>User Guide</em> in the navigation bar on the top of the page.<br><br>
+	      </font></center>
+	    </div>
+	  
+	
+	</section>
+<!--WEBMAP-->
+		
+<div class="container">
+  <div class="row">
+<iframe src="https://www.geos.ed.ac.uk/~s2236682/map.html" height="900" width="100%"
+        frameborder="0" scrolling="no" id="iframe">
+</iframe>
+  </div>
+</div>
+
+ <!--GitHub ribbon-->
+
+<a href="https://github.com/attilacodes/Capital-Greenspaces-Project" target="_blank"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" style="position: fixed; top: 0; right: 0; border: 0;" alt="Find me on GitHub" ></a>
+
+<!--- Footer --->
+      <div>
+	    <hr>
+	  </div>
+	  <div id="footer_bottom_content" style="background-color:#19422A">
+	    <div class="text-center" align="center">
+          <span id="footer-line" style="line-height:100px"><font color="#FFFFFF">Design © 2021 Group 6 ARQI,<a href="https://www.ed.ac.uk/geosciences" target="_blank"> School of GeoSciences, The University of Edinburgh<br><img align="center" src="static/GeoSciences_white.png" alt="University logo" width="auto" height="85" object-fit="scale-down" /></a></font></span>
+		</div>
+      </div>
+
+<script src="static/lightbox-plus-jquery.js"></script>
+	  {% endblock %}
+	  
+</body>
+</html>

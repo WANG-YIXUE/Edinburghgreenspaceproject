@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+  
+  <head>
+
+    <meta charset='utf-8' />
+    <!-- Dynamic rescaling of webpage to fit device size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
+    <link rel="shortcut icon" href="static/favicon.ico">
+    
+    <title>{% block title %}Home{% endblock %}</title>
+
+  </head>
+
+  <body>
+
+    {% block content %}
+    {% endblock %}
+    <footer>
+
+      <!-- Scroll to top button -->
+    <button id="btnScrollToTop">
+      <i class="material-icons">arrow_upward</i>
+    </button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <!--Using JQuery to add animation to scroll to top -->
+      <script>
+        $(document).ready(function() {
+          $("#btnScrollToTop").click(function() {
+            $("html, body").animate({
+              scrollTop: 0
+            }, "slow");
+          });
+        });
+
+      </script>
+
+      <!-- Power carousel -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.carousel').slick({
+          slidesToShow: 3,
+          dots: true,
+            centerMode: true,
+	    autoplay: true,
+	    autoplaySpeed: 4000,
+        });
+      });
+    </script>
+    
+    </footer>
+  </body>
+  
+</html>
